@@ -3,10 +3,105 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>COVID Restaurant & Bar</title>
+  <link href="https://fonts.googleapis.com/css2?family=Acme&family=Dancing+Script:wght@700&family=Neuton:ital,wght@0,400;0,800;1,400&display=swap" rel="stylesheet"> 
   <link rel="stylesheet" href="./styles/style.css">
 </head>
 <body>
+  <header>
+    <h1>COVID Restaurant & Bar</h1>
+  </header>
+
+  <main>
+
+    <div class="food">
+
+      <h2>Find me a delicious meal!</h2>
+
+      <label for="meal">Please select your main protein:</label>
+      <select name="meal" id="meal">
+
+        <option value="beef">Beef</option>
+        <option value="chicken">Chicken</option>
+        <option value="pork">Pork</option>
+        <option value="salmon">Salmon</option>
+        <option value="tofu">Tofu</option>
+        <option value="tuna">Tuna</option>
+        <option value="red_snapper">Red Snapper</option>
+        <option value="ground_beef">Ground Beef</option>
+        <option value="chicken_breast">Chicken Breast</option>
+        <option value="mussels">Mussels</option>
+        <option value="lamb">Lamb</option>
+
+      </select>
+
+    </div>
+    <div class="drink">
+
+      <h2>Find me a refreshing drink!</h2>
+
+      <label for="cocktail">Please select your main alcohol:</label>
+      <select name="cocktail" id="cocktail">
+
+        <option value="gin">Gin</option>
+        <option value="vodka">Vodka</option>
+        <option value="rum">Rum</option>
+        <option value="whiskey">Whiskey</option>
+        <option value="tequila">Tequila</option>
+        <option value="beer">Beer</option>
+        <option value="scotch">Scotch</option>
+        <option value="wine">Wine</option>
+        <option value="red_wine">Red Wine</option>
+        <option value="white_wine">White Wine</option>
+        <option value="champagne">Champagne</option>
+        <option value="white_rum">White Rum</option>
+        <option value="dark_rum">Dark Rum</option>
+        <option value="cognac">Cognac</option>
+        <option value="mezcal">Mezcal</option>
+        <option value="brandy">Brandy</option>
+        <option value="amaretto">Amaretto</option>
+        <option value=""></option>
+        <option value=""></option>
+        <option value=""></option>
+
+      </select>
+
+      <section class="results modals">
+
+        <div class="foodResults">
+
+          <h3></h3>
+          <div class="resultImg"></div>
+          <div class="ingredients">
+            <ul></ul>
+          </div>
+          <div class="recipe">
+            <div class="video"></div>
+          </div>
+          <div class="closeBtn"></div>
+
+        </div>
+
+        <div class="drinkResults">
+
+          <h3></h3>
+          <div class="resultImg"></div>
+          <div class="ingredients">
+            <ul></ul>
+          </div>
+          <div class="recipe">
+            <div class="video"></div>
+          </div>
+          <div class="closeBtn"></div>
+
+        </div>
+
+      </section>
+
+    </div>
+
+  </main>
+  
   <script src= 'https://code.jquery.com/jquery-3.4.1.js' integrity='sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=' crossorigin='anonymous'></script>
   <script src="./script.js"></script>
 </body>
