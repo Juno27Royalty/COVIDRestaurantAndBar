@@ -44,49 +44,73 @@ covidRBApp.getRecipe = (mealId) => {
     method:'GET',
     dataType:'json',
   }).then ( (recipeResponse) => {
-    console.log(recipeResponse)
+    // console.log(recipeResponse)
+    
 
-    covidRBApp.displayRecipe(recipeResponse.meals[0])
+    covidRBApp.cleanObject(recipeResponse);
+    // covidRBApp.displayRecipe(recipeResponse.meals[0])
   })
 }
 
-covidRBApp.displayRecipe = (recipe) => {
-  $(".foodResults").html(`
-    <h3>${recipe.strMeal}</h3>
-    <img class="resultImg" src = "${recipe.strMealThumb}"></img>
-    <div class="ingredients">
-      <ul>
-        <li>${recipe.strIngredient1} ${recipe.strMeasure1}</li>
-        <li>${recipe.strIngredient2} ${recipe.strMeasure2}</li>
-        <li>${recipe.strIngredient3} ${recipe.strMeasure3}</li>
-        <li>${recipe.strIngredient4} ${recipe.strMeasure4}</li>
-        <li>${recipe.strIngredient5} ${recipe.strMeasure5}</li>
-        <li>${recipe.strIngredient6} ${recipe.strMeasure6}</li>
-        <li>${recipe.strIngredient7} ${recipe.strMeasure7}</li>
-        <li>${recipe.strIngredient8} ${recipe.strMeasure8}</li>
-        <li>${recipe.strIngredient9} ${recipe.strMeasure9}</li>
-        <li>${recipe.strIngredient10} ${recipe.strMeasure10}</li>
-        <li>${recipe.strIngredient11} ${recipe.strMeasure11}</li>
-        <li>${recipe.strIngredient12} ${recipe.strMeasure12}</li>
-        <li>${recipe.strIngredient13} ${recipe.strMeasure13}</li>
-        <li>${recipe.strIngredient14} ${recipe.strMeasure14}</li>
-        <li>${recipe.strIngredient15} ${recipe.strMeasure15}</li>
-        <li>${recipe.strIngredient16} ${recipe.strMeasure16}</li>
-        <li>${recipe.strIngredient17} ${recipe.strMeasure17}</li>
-        <li>${recipe.strIngredient18} ${recipe.strMeasure18}</li>
-        <li>${recipe.strIngredient19} ${recipe.strMeasure19}</li>
-        <li>${recipe.strIngredient20} ${recipe.strMeasure20}</li>
-      </ul>
-    </div>
-    <div class="recipe">${recipe.strInstructions}
-      <div class="video">
-        <a class="recipeVideo" href="${recipe.strYoutube}" target="_blank">Click here for the recipe video!</a>
-      </div>
-    </div>
-  `);
+covidRBApp.cleanObject = (recipeObject) => {
+  covidRBApp.cleanup =  recipeObject.meals[0];
+  Object.values(covidRBApp.cleanup).forEach(value => {
+    let deleted = [];
+    if(value === null){
+      deleted.push()
+    }
+    console.log(value)
+  });
 
-  $("ul").html($("ul").html().replace(/null/g,''));
+  // for (let key in covidRBApp.cleanup) {
+  //   if (covidRBApp[key] == null) {
+  //     // delete covidRBApp.cleanup.key;
+  //     console.log(key)
+  //   }
+  // }
+  
+  // console.log(covidRBApp.cleanup)
 }
+
+
+
+// covidRBApp.displayRecipe = (recipe) => {
+//   $(".foodResults").html(`
+//     <h3>${recipe.strMeal}</h3>
+//     <img class="resultImg" src = "${recipe.strMealThumb}"></img>
+//     <div class="ingredients">
+//       <ul>
+//         <li>${recipe.strIngredient1} ${recipe.strMeasure1}</li>
+//         <li>${recipe.strIngredient2} ${recipe.strMeasure2}</li>
+//         <li>${recipe.strIngredient3} ${recipe.strMeasure3}</li>
+//         <li>${recipe.strIngredient4} ${recipe.strMeasure4}</li>
+//         <li>${recipe.strIngredient5} ${recipe.strMeasure5}</li>
+//         <li>${recipe.strIngredient6} ${recipe.strMeasure6}</li>
+//         <li>${recipe.strIngredient7} ${recipe.strMeasure7}</li>
+//         <li>${recipe.strIngredient8} ${recipe.strMeasure8}</li>
+//         <li>${recipe.strIngredient9} ${recipe.strMeasure9}</li>
+//         <li>${recipe.strIngredient10} ${recipe.strMeasure10}</li>
+//         <li>${recipe.strIngredient11} ${recipe.strMeasure11}</li>
+//         <li>${recipe.strIngredient12} ${recipe.strMeasure12}</li>
+//         <li>${recipe.strIngredient13} ${recipe.strMeasure13}</li>
+//         <li>${recipe.strIngredient14} ${recipe.strMeasure14}</li>
+//         <li>${recipe.strIngredient15} ${recipe.strMeasure15}</li>
+//         <li>${recipe.strIngredient16} ${recipe.strMeasure16}</li>
+//         <li>${recipe.strIngredient17} ${recipe.strMeasure17}</li>
+//         <li>${recipe.strIngredient18} ${recipe.strMeasure18}</li>
+//         <li>${recipe.strIngredient19} ${recipe.strMeasure19}</li>
+//         <li>${recipe.strIngredient20} ${recipe.strMeasure20}</li>
+//       </ul>
+//     </div>
+//     <div class="recipe">${recipe.strInstructions}
+//       <div class="video">
+//         <a class="recipeVideo" href="${recipe.strYoutube}" target="_blank">Click here for the recipe video!</a>
+//       </div>
+//     </div>
+//   `);
+
+
+// }
 
 
 covidRBApp.getID(`beef`)
