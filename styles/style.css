@@ -264,3 +264,126 @@ a {
   width: 80%;
   margin: 0 auto;
 }
+
+main {
+  background-image: url(../assets/image3.jpeg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+}
+
+.selectionArea {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-top: 100px;
+}
+
+footer {
+  background-color: cornflowerblue;
+}
+
+.foodResults {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #F08080;
+}
+
+.drinkResults {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #98FB98;
+}
+
+img {
+  height: 350px;
+  width: 350px;
+  margin-bottom: 15px;
+}
+
+.recipe {
+  width: 50%;
+}
+
+a:hover {
+  color: darkgrey;
+  cursor: pointer;
+}
+
+.ingredients {
+  width: 20%;
+  margin-bottom: 20px;
+}
+
+.modal {
+  display: none;
+}
+
+h1 {
+  font-family: "Neuton", serif;
+  font-size: 80px;
+  text-align: center;
+  padding-top: 50px;
+}
+
+h2 {
+  font-family: "Neuton", serif;
+  font-size: 40px;
+}
+
+label, select {
+  font-family: "Neuton", serif;
+  font-size: 24px;
+}
+
+.foodResults h3 {
+  font-family: "Acme", sans-serif;
+  font-size: 40px;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.drinkResults h3 {
+  font-family: "Dancing Script", cursive;
+  font-size: 40px;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.ingredients, .recipe {
+  font-family: "Neuton", serif;
+  font-size: 26px;
+}
+
+h4 {
+  font-family: "Neuton", serif;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+p {
+  font-family: "Neuton", serif;
+  font-size: 26px;
+  color: black;
+  text-align: center;
+}

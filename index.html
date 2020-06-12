@@ -3,17 +3,20 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Acme&family=Dancing+Script:wght@700&family=Neuton:ital,wght@0,400;0,800;1,400&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="styles/style.css">
   <title>COVID Restaurant & Bar</title>
-  <link href="https://fonts.googleapis.com/css2?family=Acme&family=Dancing+Script:wght@700&family=Neuton:ital,wght@0,400;0,800;1,400&display=swap" rel="stylesheet"> 
-  <link rel="stylesheet" href="./styles/style.css">
 </head>
 <body>
+  <main>
   <header>
     <h1>COVID Restaurant & Bar</h1>
   </header>
 
-  <main>
-
+  
+    <div class="selectionArea wrapper">
     <section class="food">
 
       <h2>Find me a delicious meal!</h2>
@@ -67,10 +70,11 @@
       </select>
 
     </section>
+    </div>
 
   </main>
 
-  <modal class="foodResults">
+  <modal class="foodResults modal">
 
     <h3></h3>
     <div class="resultImg"></div>
@@ -84,19 +88,24 @@
 
   </modal>
 
-  <modal class="drinkResults">
+  <modal class="drinkResults modal">
 
     <h3></h3>
     <div class="resultImg"></div>
     <div class="ingredients">
+      
       <ul></ul>
     </div>
     <div class="recipe">
+      
       <div class="video"></div>
     </div>
     <div class="closeBtn"></div>
 
   </modal>
+  <footer>
+    <p>Designed by: Jerry Dong & Shonda Moshis</p>
+  </footer>
 
   
   <script src= 'https://code.jquery.com/jquery-3.4.1.js' integrity='sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=' crossorigin='anonymous'></script>
