@@ -1,27 +1,38 @@
+.modal {
+    position: absolute;
+    top: -200%;
+}
+
+.modal.show {
+    top: 0;
+}
+
 .foodResults{
     @include modalPosition;
     background-color:$foodColor;
 }
+
 .drinkResults{
     @include modalPosition;
     background-color: $drinkColor;
 }
+
 img{
     height:350px;
     width:350px;
     margin-bottom: 15px;
 }
+
 .recipe{
     width:50%;
 }
+
 a:hover{
     color:darkgrey;
     cursor: pointer;
 }
+
 .ingredients{
     width:20%;
     margin-bottom: 20px;
-}
-.modal{
-    display: none;
 }

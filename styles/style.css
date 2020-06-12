@@ -265,26 +265,78 @@ a {
   margin: 0 auto;
 }
 
-main {
-  background-image: url(../assets/image3.jpeg);
+body {
+  background-image: url(../assets/louis-hansel-shotsoflouis-39s0TOHAGwk-unsplash.jpg);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  height: 100vh;
+  min-height: 100vh;
+  position: relative;
+  padding-bottom: 50px;
+}
+
+header {
+  position: absolute;
+  text-align: center;
+  width: 100%;
+  z-index: 100;
 }
 
 .selectionArea {
+  position: absolute;
+  top: 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  margin-top: 100px;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100vh;
+  width: 100%;
+}
+
+.food, .drink {
+  padding-top: 300px;
+  height: 100%;
+  width: 50%;
+  text-align: center;
+}
+
+.selectionArea .food {
+  background-color: rgba(240, 128, 128, 0.7);
+}
+
+.selectionArea .drink {
+  background-color: rgba(152, 251, 152, 0.7);
+}
+
+.food h2 {
+  font-family: "Acme", sans-serif;
+}
+
+.drink h2 {
+  font-family: "Dancing Script", cursive;
 }
 
 footer {
   background-color: cornflowerblue;
+  width: 100%;
+  text-align: center;
+  position: absolute;
+  bottom: 0;
+  padding: 20px;
+}
+
+.modal {
+  position: absolute;
+  top: -200%;
+}
+
+.modal.show {
+  top: 0;
 }
 
 .foodResults {
@@ -298,7 +350,7 @@ footer {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background-color: #F08080;
+  background-color: lightcoral;
 }
 
 .drinkResults {
@@ -312,7 +364,7 @@ footer {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background-color: #98FB98;
+  background-color: palegreen;
 }
 
 img {
@@ -335,25 +387,29 @@ a:hover {
   margin-bottom: 20px;
 }
 
-.modal {
-  display: none;
+h1,
+h2,
+p,
+label {
+  color: #363636;
 }
 
 h1 {
   font-family: "Neuton", serif;
-  font-size: 80px;
+  font-size: 8rem;
   text-align: center;
   padding-top: 50px;
 }
 
 h2 {
   font-family: "Neuton", serif;
-  font-size: 40px;
+  font-size: 4rem;
+  margin-bottom: 2rem;
 }
 
 label, select {
   font-family: "Neuton", serif;
-  font-size: 24px;
+  font-size: 2.4rem;
 }
 
 .foodResults h3 {
@@ -372,18 +428,17 @@ label, select {
 
 .ingredients, .recipe {
   font-family: "Neuton", serif;
-  font-size: 26px;
+  font-size: 2.6rem;
 }
 
 h4 {
   font-family: "Neuton", serif;
-  font-size: 30px;
+  font-size: 3rem;
   font-weight: bold;
 }
 
 p {
   font-family: "Neuton", serif;
-  font-size: 26px;
-  color: black;
+  font-size: 2.6rem;
   text-align: center;
 }

@@ -65,7 +65,7 @@ covidRBApp.displayRecipe = (recipe) => {
     <h3>${recipe.strMeal}</h3>
     <img class="resultImg" src = "${recipe.strMealThumb}"></img>
     <div class="ingredients">
-    <h4>Ingredients:</h4>
+      <h4>Ingredients:</h4>
       <ul>
         <li>${recipe.strIngredient1} ${recipe.strMeasure1}</li>
         <li>${recipe.strIngredient2} ${recipe.strMeasure2}</li>
