@@ -12,7 +12,7 @@ header {
     position: absolute;
     text-align: center;
     width: 100%;
-    z-index: 100;
+    z-index: 10;
 }
 
 .selectionArea{
@@ -29,7 +29,7 @@ select:hover, select:focus{
 }
 
 .food, .drink {
-    padding-top: 300px;
+    padding-top: 30rem;
     height: 100%;
     width: 50%;
     text-align: center;
@@ -48,6 +48,28 @@ select:hover, select:focus{
 }
 
 .drink h2 {
+    font-family: $drinkFont;
+}
+
+form button {
+    display: block;
+    margin: 3rem auto;
+    @include buttonStyle
+}
+
+.meal button {
+    background-color: $drinkColor;
+    font-size: 2.5rem;
+    font-family: $foodFont;
+}
+
+.drink button {
+    background-color: $foodColor;
+    font-size: 2.5rem;
+    font-family: $drinkFont;
+}
+
+.drink button {
     font-family: $drinkFont;
 }
 

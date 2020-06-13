@@ -24,17 +24,30 @@
 
 const covidRBApp = {};
 
+// Modal Functionality
+
+covidRBApp.modal = (whichRecipe) => {
+  $(whichRecipe).addClass(`show`);
+
+  $(`.modal`).on(`click`, `.closeModal`, () => {
+    $(whichRecipe).removeClass(`show`);
+  })
+};
+
+// Call Food
+
 covidRBApp.getID = (query) => {
   $.ajax({
     url: `https://www.themealdb.com/api/json/v1/1/filter.php?i=${query}`,
     method: `GET`,
     dataType: `json`,
-  }).then( idResponse => {
+    })
+    .then( idResponse => {
     const randomizedMealNumber = Math.floor(Math.random() * idResponse.meals.length);
 
-    const randomizedMealId = idResponse.meals[randomizedMealNumber].idMeal
+    const randomizedMealId = idResponse.meals[randomizedMealNumber].idMeal;
 
-    covidRBApp.getRecipe(randomizedMealId)
+    covidRBApp.getRecipe(randomizedMealId);
   })
 }
 
@@ -57,7 +70,7 @@ covidRBApp.cleanObject = (recipeObject) => {
     }
   }
   
-      covidRBApp.displayRecipe(covidRBApp.cleanup)
+  covidRBApp.displayRecipe(covidRBApp.cleanup)
 }
 
 covidRBApp.displayRecipe = (recipe) => {
@@ -67,38 +80,41 @@ covidRBApp.displayRecipe = (recipe) => {
     <div class="ingredients">
       <h4>Ingredients:</h4>
       <ul>
-        <li>${recipe.strIngredient1} ${recipe.strMeasure1}</li>
-        <li>${recipe.strIngredient2} ${recipe.strMeasure2}</li>
-        <li>${recipe.strIngredient3} ${recipe.strMeasure3}</li>
-        <li>${recipe.strIngredient4} ${recipe.strMeasure4}</li>
-        <li>${recipe.strIngredient5} ${recipe.strMeasure5}</li>
-        <li>${recipe.strIngredient6} ${recipe.strMeasure6}</li>
-        <li>${recipe.strIngredient7} ${recipe.strMeasure7}</li>
-        <li>${recipe.strIngredient8} ${recipe.strMeasure8}</li>
-        <li>${recipe.strIngredient9} ${recipe.strMeasure9}</li>
-        <li>${recipe.strIngredient10} ${recipe.strMeasure10}</li>
-        <li>${recipe.strIngredient11} ${recipe.strMeasure11}</li>
-        <li>${recipe.strIngredient12} ${recipe.strMeasure12}</li>
-        <li>${recipe.strIngredient13} ${recipe.strMeasure13}</li>
-        <li>${recipe.strIngredient14} ${recipe.strMeasure14}</li>
-        <li>${recipe.strIngredient15} ${recipe.strMeasure15}</li>
-        <li>${recipe.strIngredient16} ${recipe.strMeasure16}</li>
-        <li>${recipe.strIngredient17} ${recipe.strMeasure17}</li>
-        <li>${recipe.strIngredient18} ${recipe.strMeasure18}</li>
-        <li>${recipe.strIngredient19} ${recipe.strMeasure19}</li>
-        <li>${recipe.strIngredient20} ${recipe.strMeasure20}</li>
+        <li>${recipe.strMeasure1} ${recipe.strIngredient1}</li>
+        <li>${recipe.strMeasure2} ${recipe.strIngredient2}</li>
+        <li>${recipe.strMeasure3} ${recipe.strIngredient3}</li>
+        <li>${recipe.strMeasure4} ${recipe.strIngredient4}</li>
+        <li>${recipe.strMeasure5} ${recipe.strIngredient5}</li>
+        <li>${recipe.strMeasure6} ${recipe.strIngredient6}</li>
+        <li>${recipe.strMeasure7} ${recipe.strIngredient7}</li>
+        <li>${recipe.strMeasure8} ${recipe.strIngredient8}</li>
+        <li>${recipe.strMeasure9} ${recipe.strIngredient9}</li>
+        <li>${recipe.strMeasure10} ${recipe.strIngredient10}</li>
+        <li>${recipe.strMeasure11} ${recipe.strIngredient11}</li>
+        <li>${recipe.strMeasure12} ${recipe.strIngredient12}</li>
+        <li>${recipe.strMeasure13} ${recipe.strIngredient13}</li>
+        <li>${recipe.strMeasure14} ${recipe.strIngredient14}</li>
+        <li>${recipe.strMeasure15} ${recipe.strIngredient15}</li>
+        <li>${recipe.strMeasure16} ${recipe.strIngredient16}</li>
+        <li>${recipe.strMeasure17} ${recipe.strIngredient17}</li>
+        <li>${recipe.strMeasure18} ${recipe.strIngredient18}</li>
+        <li>${recipe.strMeasure19} ${recipe.strIngredient19}</li>
+        <li>${recipe.strMeasure20} ${recipe.strIngredient20}</li>
       </ul>
     </div>
-    <div class="recipe"><h4>Directions:</h4>${recipe.strInstructions}
+    <div class="recipe"><h4>Directions:</h4>
+      <p>${recipe.strInstructions}</p>
       <div class="video">
         <a class="recipeVideo" href="${recipe.strYoutube}" target="_blank">Click here for the recipe video!</a>
       </div>
     </div>
+    <div class="closeModal">
+      <p>I'm full! Now I'm thirsty.</p>
+    </div>
   `);
- 
 }
-covidRBApp.getID('chicken')
 
+// Call Drink
 
 covidRBApp.getDrinkID = (query) => {
   $.ajax({
@@ -124,8 +140,6 @@ covidRBApp.getDrinkRecipe = (drinkId) => {
   })
 }
 
-
-
 covidRBApp.cleanDrinkObject = (recipeObject) => {
   covidRBApp.cleanupDrink = recipeObject.drinks[0];
   for (let key in covidRBApp.cleanupDrink) {
@@ -144,52 +158,52 @@ covidRBApp.displayDrinkRecipe = (recipe) => {
     <div class="ingredients">
     <h4>Ingredients:</h4>
       <ul>
-        <li>${recipe.strIngredient1} ${recipe.strMeasure1}</li>
-        <li>${recipe.strIngredient2} ${recipe.strMeasure2}</li>
-        <li>${recipe.strIngredient3} ${recipe.strMeasure3}</li>
-        <li>${recipe.strIngredient4} ${recipe.strMeasure4}</li>
-        <li>${recipe.strIngredient5} ${recipe.strMeasure5}</li>
-        <li>${recipe.strIngredient6} ${recipe.strMeasure6}</li>
-        <li>${recipe.strIngredient7} ${recipe.strMeasure7}</li>
-        <li>${recipe.strIngredient8} ${recipe.strMeasure8}</li>
-        <li>${recipe.strIngredient9} ${recipe.strMeasure9}</li>
-        <li>${recipe.strIngredient10} ${recipe.strMeasure10}</li>
-        <li>${recipe.strIngredient11} ${recipe.strMeasure11}</li>
-        <li>${recipe.strIngredient12} ${recipe.strMeasure12}</li>
-        <li>${recipe.strIngredient13} ${recipe.strMeasure13}</li>
-        <li>${recipe.strIngredient14} ${recipe.strMeasure14}</li>
-        <li>${recipe.strIngredient15} ${recipe.strMeasure15}</li>
+        <li>${recipe.strMeasure1} ${recipe.strIngredient1}</li>
+        <li>${recipe.strMeasure2} ${recipe.strIngredient2}</li>
+        <li>${recipe.strMeasure3} ${recipe.strIngredient3}</li>
+        <li>${recipe.strMeasure4} ${recipe.strIngredient4}</li>
+        <li>${recipe.strMeasure5} ${recipe.strIngredient5}</li>
+        <li>${recipe.strMeasure6} ${recipe.strIngredient6}</li>
+        <li>${recipe.strMeasure7} ${recipe.strIngredient7}</li>
+        <li>${recipe.strMeasure8} ${recipe.strIngredient8}</li>
+        <li>${recipe.strMeasure9} ${recipe.strIngredient9}</li>
+        <li>${recipe.strMeasure10} ${recipe.strIngredient10}</li>
+        <li>${recipe.strMeasure11} ${recipe.strIngredient11}</li>
+        <li>${recipe.strMeasure12} ${recipe.strIngredient12}</li>
+        <li>${recipe.strMeasure13} ${recipe.strIngredient13}</li>
+        <li>${recipe.strMeasure14} ${recipe.strIngredient14}</li>
+        <li>${recipe.strMeasure15} ${recipe.strIngredient15}</li>
       </ul>
     </div>
-    <div class="recipe"><h4>Directions:</h4>${recipe.strInstructions}</div>`);
+    <div class="recipe"><h4>Directions:</h4>${recipe.strInstructions}</div>
+    <div class="closeModal">
+      <p>Thirst quenched! Now I'm hungry.</p>
+    </div>
+  `);
+};
+
+// Select Ingredients
+
+covidRBApp.userSelection = () => {
+  $(`form`).on(`submit`, function(e) {
+    e.preventDefault();
+    
+    if ($(this).hasClass(`meal`)) {
+      covidRBApp.getID(this[0].value);
+      covidRBApp.modal(`.foodResults`);
+    } 
+    else if ($(this).hasClass(`cocktail`)) {
+      console.log(`clicked`)
+      covidRBApp.getDrinkID(this[0].value);
+      covidRBApp.modal(`.drinkResults`);
+    }
+  })
 }
 
+covidRBApp.init = () => {
+  covidRBApp.userSelection();
+}
 
-
-// covidRBApp.getDrinkID(`vodka`)
-
-
-
-
-// covidRBApp.userSelection = () => {
-//   $(`select`).on('change', function() {
-//     const selected = this.value
-//     covidRBApp.getID(selected)
-//   })
-// }
-
-// covidRBApp.init = () => {
-//   covidRBApp.userSelection();
-// }
-
-// $(() => {
-//   covidRBApp.init();
-// });
-
-
-// $("#meal option:selected").val()
-// let userMealSelection = $('select[name="meal"]:selected').val();
-
-// console.log(covidRBApp.selectedMeal)
-
-// let userDrinkSelection = $('select[name="meal"]:selected').val();
+$(() => {
+  covidRBApp.init();
+});

@@ -1,11 +1,17 @@
-// .modal {
-//     position: absolute;
-//     top: -200%;
-// }
+.modal {
+    width: 100%;
+    position: absolute;
+    z-index: 20;
+    top: -300%;
+    left: 0;
+    padding: 3rem;
+    min-height: 100vh;
+    transition: all 1s;
+}
 
-// .modal.show {
-//     top: 0;
-// }
+.modal.show {
+    top: 0;
+}
 
 .foodResults{
     @include modalPosition;
@@ -18,25 +24,66 @@
 }
 
 img{
-    height:350px;
-    width:350px;
-    margin-bottom: 15px;
+    height: 25%;
+    width: 25%;
+}
+
+.ingredients {
+    margin: 3rem 0;
+    width: 70%;
+
+    h4 {
+        margin-bottom: 1rem;
+    }
+    
+    ul {
+        columns: 2;
+    }
 }
 
 .recipe{
-    width:50%;
+    width: 70%;
+
+    p {
+        line-height: 3rem;
+        margin: 1rem auto;
+    }
+
+    .video {
+        font-weight: 700;
+        text-align: center;
+        margin-top: 2rem;
+    }
 }
 
-a:hover, a:focus{
-    color:darkgrey;
+.foodResults {
+    .closeModal {
+        background-color: $drinkColor;
+        @include buttonStyle;
+
+        p {
+            font-family: $foodFont;
+            font-weight: 700;
+        }
+    }
+}
+
+.drinkResults {
+    .closeModal {
+        background-color: $foodColor;
+        @include buttonStyle;
+
+        p {
+            font-family: $drinkFont;
+            font-weight: 700;
+        }
+    }
+}
+
+.closeModal p:hover,
+.closeModal p:focus,
+a:hover,
+a:focus {
+    color:dimgrey;
     cursor: pointer;
-}
-
-.ingredients{
-    width:20%;
-    margin-bottom: 20px;
-}
-
-.modal{
-    display: none;
 }

@@ -265,6 +265,59 @@ a {
   margin: 0 auto;
 }
 
+*, a {
+  color: #3f3f46;
+  font-family: "Neuton", serif;
+}
+
+h1 {
+  font-family: "Neuton", serif;
+  font-size: 8rem;
+  text-align: center;
+  padding-top: 50px;
+}
+
+h2 {
+  font-family: "Neuton", serif;
+  font-size: 5rem;
+  margin-bottom: 3rem;
+}
+
+label, select {
+  font-family: "Neuton", serif;
+  font-size: 2.4rem;
+}
+
+.foodResults h3 {
+  font-family: "Acme", sans-serif;
+  font-size: 4rem;
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.drinkResults h3 {
+  font-family: "Dancing Script", cursive;
+  font-size: 4rem;
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.ingredients, .recipe {
+  font-family: "Neuton", serif;
+  font-size: 2.6rem;
+}
+
+h4 {
+  font-family: "Neuton", serif;
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+p {
+  font-family: "Neuton", serif;
+  font-size: 2.6rem;
+}
+
 body {
   background-image: url(../assets/louis-hansel-shotsoflouis-39s0TOHAGwk-unsplash.jpg);
   background-size: cover;
@@ -279,7 +332,7 @@ header {
   position: absolute;
   text-align: center;
   width: 100%;
-  z-index: 100;
+  z-index: 10;
 }
 
 .selectionArea {
@@ -303,18 +356,18 @@ select:hover, select:focus {
 }
 
 .food, .drink {
-  padding-top: 300px;
+  padding-top: 30rem;
   height: 100%;
   width: 50%;
   text-align: center;
 }
 
 .selectionArea .food {
-  background-color: rgba(240, 128, 128, 0.7);
+  background-color: rgba(239, 190, 171, 0.7);
 }
 
 .selectionArea .drink {
-  background-color: rgba(152, 251, 152, 0.7);
+  background-color: rgba(177, 210, 218, 0.7);
 }
 
 .food h2 {
@@ -325,6 +378,50 @@ select:hover, select:focus {
   font-family: "Dancing Script", cursive;
 }
 
+form button {
+  display: block;
+  margin: 3rem auto;
+  margin: 4rem auto;
+  padding: 1.5rem;
+  border-radius: 5px;
+  border-left: solid 2px gainsboro;
+  border-top: solid 2px gainsboro;
+  border-right: solid 2px gray;
+  border-bottom: solid 2px gray;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+
+form button:hover, form button:focus {
+  color: dimgrey;
+  cursor: pointer;
+}
+
+form button:active {
+  -webkit-filter: brightness(0.9);
+          filter: brightness(0.9);
+  border-left: solid 2px gray;
+  border-top: solid 2px gray;
+  border-right: solid 2px gainsboro;
+  border-bottom: solid 2px gainsboro;
+}
+
+.meal button {
+  background-color: #b1d2da;
+  font-size: 2.5rem;
+  font-family: "Acme", sans-serif;
+}
+
+.drink button {
+  background-color: #efbeab;
+  font-size: 2.5rem;
+  font-family: "Dancing Script", cursive;
+}
+
+.drink button {
+  font-family: "Dancing Script", cursive;
+}
+
 footer {
   background-color: lightgoldenrodyellow;
   width: 100%;
@@ -332,6 +429,22 @@ footer {
   position: absolute;
   bottom: 0;
   padding: 20px;
+}
+
+.modal {
+  width: 100%;
+  position: absolute;
+  z-index: 20;
+  top: -300%;
+  left: 0;
+  padding: 3rem;
+  min-height: 100vh;
+  -webkit-transition: all 1s;
+  transition: all 1s;
+}
+
+.modal.show {
+  top: 0;
 }
 
 .foodResults {
@@ -345,7 +458,7 @@ footer {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background-color: lightcoral;
+  background-color: #efbeab;
 }
 
 .drinkResults {
@@ -359,87 +472,113 @@ footer {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background-color: palegreen;
+  background-color: #b1d2da;
 }
 
 img {
-  height: 350px;
-  width: 350px;
-  margin-bottom: 15px;
-}
-
-.recipe {
-  width: 50%;
-}
-
-a:hover, a:focus {
-  color: darkgrey;
-  cursor: pointer;
+  height: 25%;
+  width: 25%;
 }
 
 .ingredients {
-  width: 20%;
-  margin-bottom: 20px;
+  margin: 3rem 0;
+  width: 70%;
 }
 
-.modal {
-  display: none;
+.ingredients h4 {
+  margin-bottom: 1rem;
 }
 
-h1,
-h2,
-p,
-label, select, a {
-  color: #363636;
+.ingredients ul {
+  -webkit-columns: 2;
+          columns: 2;
 }
 
-h1 {
-  font-family: "Neuton", serif;
-  font-size: 8rem;
+.recipe {
+  width: 70%;
+}
+
+.recipe p {
+  line-height: 3rem;
+  margin: 1rem auto;
+}
+
+.recipe .video {
+  font-weight: 700;
   text-align: center;
-  padding-top: 50px;
+  margin-top: 2rem;
 }
 
-h2 {
-  font-family: "Neuton", serif;
-  font-size: 4rem;
-  margin-bottom: 2rem;
+.foodResults .closeModal {
+  background-color: #b1d2da;
+  margin: 4rem auto;
+  padding: 1.5rem;
+  border-radius: 5px;
+  border-left: solid 2px gainsboro;
+  border-top: solid 2px gainsboro;
+  border-right: solid 2px gray;
+  border-bottom: solid 2px gray;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
 }
 
-label, select {
-  font-family: "Neuton", serif;
-  font-size: 2.4rem;
+.foodResults .closeModal:hover, .foodResults .closeModal:focus {
+  color: dimgrey;
+  cursor: pointer;
 }
 
-.foodResults h3 {
+.foodResults .closeModal:active {
+  -webkit-filter: brightness(0.9);
+          filter: brightness(0.9);
+  border-left: solid 2px gray;
+  border-top: solid 2px gray;
+  border-right: solid 2px gainsboro;
+  border-bottom: solid 2px gainsboro;
+}
+
+.foodResults .closeModal p {
   font-family: "Acme", sans-serif;
-  font-size: 40px;
-  text-align: center;
-  margin-bottom: 15px;
+  font-weight: 700;
 }
 
-.drinkResults h3 {
+.drinkResults .closeModal {
+  background-color: #efbeab;
+  margin: 4rem auto;
+  padding: 1.5rem;
+  border-radius: 5px;
+  border-left: solid 2px gainsboro;
+  border-top: solid 2px gainsboro;
+  border-right: solid 2px gray;
+  border-bottom: solid 2px gray;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+
+.drinkResults .closeModal:hover, .drinkResults .closeModal:focus {
+  color: dimgrey;
+  cursor: pointer;
+}
+
+.drinkResults .closeModal:active {
+  -webkit-filter: brightness(0.9);
+          filter: brightness(0.9);
+  border-left: solid 2px gray;
+  border-top: solid 2px gray;
+  border-right: solid 2px gainsboro;
+  border-bottom: solid 2px gainsboro;
+}
+
+.drinkResults .closeModal p {
   font-family: "Dancing Script", cursive;
-  font-size: 40px;
-  text-align: center;
-  margin-bottom: 15px;
+  font-weight: 700;
 }
 
-.ingredients, .recipe {
-  font-family: "Neuton", serif;
-  font-size: 2.6rem;
-}
-
-h4 {
-  font-family: "Neuton", serif;
-  font-size: 3rem;
-  font-weight: bold;
-}
-
-p {
-  font-family: "Neuton", serif;
-  font-size: 2.6rem;
-  text-align: center;
+.closeModal p:hover,
+.closeModal p:focus,
+a:hover,
+a:focus {
+  color: dimgrey;
+  cursor: pointer;
 }
 
 @media (max-width: 615px) {
