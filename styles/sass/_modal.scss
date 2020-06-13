@@ -80,10 +80,13 @@ img{
     }
 }
 
-.closeModal p:hover,
-.closeModal p:focus,
+.closeModal p {
+    transition: all 0.2s;
+}
+
 a:hover,
 a:focus {
     color:dimgrey;
     cursor: pointer;
+    transition: all 0.2s;
 }

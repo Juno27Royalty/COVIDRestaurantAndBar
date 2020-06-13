@@ -21,8 +21,14 @@
 
     &:hover,
     &:focus {
-        color:dimgrey;
         cursor: pointer;
+        color:dimgrey;
+    }
+
+
+    &:hover>p,
+    &:focus>p {
+        color:dimgrey;
     }
 
     &:active {

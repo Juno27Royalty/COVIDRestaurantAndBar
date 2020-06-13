@@ -393,8 +393,13 @@ form button {
 }
 
 form button:hover, form button:focus {
-  color: dimgrey;
   cursor: pointer;
+  color: dimgrey;
+}
+
+form button:hover > p,
+form button:focus > p {
+  color: dimgrey;
 }
 
 form button:active {
@@ -523,8 +528,13 @@ img {
 }
 
 .foodResults .closeModal:hover, .foodResults .closeModal:focus {
-  color: dimgrey;
   cursor: pointer;
+  color: dimgrey;
+}
+
+.foodResults .closeModal:hover > p,
+.foodResults .closeModal:focus > p {
+  color: dimgrey;
 }
 
 .foodResults .closeModal:active {
@@ -555,8 +565,13 @@ img {
 }
 
 .drinkResults .closeModal:hover, .drinkResults .closeModal:focus {
-  color: dimgrey;
   cursor: pointer;
+  color: dimgrey;
+}
+
+.drinkResults .closeModal:hover > p,
+.drinkResults .closeModal:focus > p {
+  color: dimgrey;
 }
 
 .drinkResults .closeModal:active {
@@ -573,12 +588,17 @@ img {
   font-weight: 700;
 }
 
-.closeModal p:hover,
-.closeModal p:focus,
+.closeModal p {
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+
 a:hover,
 a:focus {
   color: dimgrey;
   cursor: pointer;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
 }
 
 @media (max-width: 615px) {
