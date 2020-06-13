@@ -1,11 +1,11 @@
-.modal {
-    position: absolute;
-    top: -200%;
-}
+// .modal {
+//     position: absolute;
+//     top: -200%;
+// }
 
-.modal.show {
-    top: 0;
-}
+// .modal.show {
+//     top: 0;
+// }
 
 .foodResults{
     @include modalPosition;
@@ -27,7 +27,7 @@ img{
     width:50%;
 }
 
-a:hover{
+a:hover, a:focus{
     color:darkgrey;
     cursor: pointer;
 }
@@ -37,6 +37,6 @@ a:hover{
     margin-bottom: 20px;
 }
 
-// .modal{
-//     display: none;
-// }
+.modal{
+    display: none;
+}

@@ -1,0 +1,9 @@
+@media(max-width:615px){
+    .selectionArea{
+        flex-direction: column;
+    }
+    .food, .drink{
+        width:100%;
+        padding-top: 180px;
+    }
+}
