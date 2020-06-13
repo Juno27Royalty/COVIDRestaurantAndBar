@@ -97,7 +97,7 @@ covidRBApp.displayRecipe = (recipe) => {
   `);
  
 }
-// covidRBApp.getID('chicken')
+covidRBApp.getID('chicken')
 
 
 covidRBApp.getDrinkID = (query) => {
@@ -119,17 +119,18 @@ covidRBApp.getDrinkRecipe = (drinkId) => {
     url: `https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${drinkId}`,
     method: 'GET',
     dataType: 'json',
-  }).then((recipeResponse) => {
-    covidRBApp.cleanDrinkObject(recipeResponse);
+  }).then((recipe) => {
+    covidRBApp.cleanDrinkObject(recipe);
   })
 }
 
+
+
 covidRBApp.cleanDrinkObject = (recipeObject) => {
   covidRBApp.cleanupDrink = recipeObject.drinks[0];
-
   for (let key in covidRBApp.cleanupDrink) {
     if (covidRBApp.cleanupDrink[key] == null) {
-      covidRBApp.cleanupDrink[key] = "";
+      covidRBApp.cleanupDrink[key] = "" ;
     }
   }
 
@@ -158,11 +159,6 @@ covidRBApp.displayDrinkRecipe = (recipe) => {
         <li>${recipe.strIngredient13} ${recipe.strMeasure13}</li>
         <li>${recipe.strIngredient14} ${recipe.strMeasure14}</li>
         <li>${recipe.strIngredient15} ${recipe.strMeasure15}</li>
-        <li>${recipe.strIngredient16} ${recipe.strMeasure16}</li>
-        <li>${recipe.strIngredient17} ${recipe.strMeasure17}</li>
-        <li>${recipe.strIngredient18} ${recipe.strMeasure18}</li>
-        <li>${recipe.strIngredient19} ${recipe.strMeasure19}</li>
-        <li>${recipe.strIngredient20} ${recipe.strMeasure20}</li>
       </ul>
     </div>
     <div class="recipe"><h4>Directions:</h4>${recipe.strInstructions}</div>`);
@@ -170,7 +166,7 @@ covidRBApp.displayDrinkRecipe = (recipe) => {
 
 
 
-covidRBApp.getDrinkID(`vodka`)
+// covidRBApp.getDrinkID(`vodka`)
 
 
 
