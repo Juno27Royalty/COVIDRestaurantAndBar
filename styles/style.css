@@ -378,7 +378,7 @@ select:hover, select:focus {
   font-family: "Dancing Script", cursive;
 }
 
-form button {
+button {
   display: block;
   margin: 3rem auto;
   margin: 2rem auto;
@@ -394,12 +394,12 @@ form button {
   font-size: 2.5rem;
 }
 
-form button:hover, form button:focus {
+button:hover, button:focus {
   cursor: pointer;
   color: dimgrey;
 }
 
-form button:active {
+button:active {
   -webkit-filter: brightness(0.9);
           filter: brightness(0.9);
   border-left: solid 2px gray;
@@ -408,19 +408,13 @@ form button:active {
   border-bottom: solid 2px gainsboro;
 }
 
-.meal button {
+.food button {
   background-color: #b1d2da;
-  font-size: 2.5rem;
   font-family: "Acme", sans-serif;
 }
 
 .drink button {
   background-color: #efbeab;
-  font-size: 2.5rem;
-  font-family: "Dancing Script", cursive;
-}
-
-.drink button {
   font-family: "Dancing Script", cursive;
 }
 
