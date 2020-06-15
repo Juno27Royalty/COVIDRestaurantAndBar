@@ -217,6 +217,7 @@ covidRBApp.randomRecipe = (selectedIngredient) => {
   })
 }
 
+
 // Homepage Randomize Button
 
 covidRBApp.randomFoodBtn = ()=>{
@@ -246,6 +247,8 @@ covidRBApp.randomFoodBtn = ()=>{
       })
     })
   }
+  
+ // Page Init
   
 covidRBApp.init = () => {
   covidRBApp.userSelection();

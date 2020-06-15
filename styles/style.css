@@ -575,6 +575,10 @@ a:focus {
 }
 
 @media (max-width: 615px) {
+  h1 {
+    padding: 20px 0 20px 0;
+    border-bottom: 1px solid #3f3f46;
+  }
   .selectionArea {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -588,5 +592,17 @@ a:focus {
   .drink {
     width: 100%;
     padding-top: 50px;
+  }
+}
+
+@media (max-height: 525px) {
+  h1 {
+    padding: 10px 0 10px 0;
+  }
+  .food {
+    padding-top: 135px;
+  }
+  .drink {
+    padding-top: 10px;
   }
 }
