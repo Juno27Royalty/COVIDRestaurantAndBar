@@ -35,9 +35,10 @@ covidRBApp.userSelection = () => {
       covidRBApp.randomRecipe(choice);
     } 
     else if ($(this).hasClass(`cocktail`)) {
-      covidRBApp.getDrinkID(this[0].value);
+      let choice = this[0].value;
+      covidRBApp.getDrinkID(choice);
       covidRBApp.modal(`.drinkResults`);
-      covidRBApp.randomRecipe(this[0].value)
+      covidRBApp.randomRecipe(choice)
     }
   })
 }
