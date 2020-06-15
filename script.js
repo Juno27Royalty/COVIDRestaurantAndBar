@@ -79,8 +79,8 @@ covidRBApp.cleanObject = (recipeObject) => {
       covidRBApp.cleanup[key] = "";
     }
   }
-  
-  covidRBApp.displayRecipe(covidRBApp.cleanup)
+
+  covidRBApp.displayRecipe(covidRBApp.cleanup);
 }
 
 covidRBApp.displayRecipe = (recipe) => {
@@ -133,9 +133,9 @@ covidRBApp.getDrinkID = (query) => {
   }).then(idResponse => {
     const randomizedDrinkNumber = Math.floor(Math.random() * idResponse.drinks.length);
 
-    const randomizedDrinkId = idResponse.drinks[randomizedDrinkNumber].idDrink
+    const randomizedDrinkId = idResponse.drinks[randomizedDrinkNumber].idDrink;
 
-    covidRBApp.getDrinkRecipe(randomizedDrinkId)
+    covidRBApp.getDrinkRecipe(randomizedDrinkId);
   })
 }
 
@@ -155,9 +155,9 @@ covidRBApp.cleanDrinkObject = (recipeObject) => {
     if (covidRBApp.cleanupDrink[key] == null) {
       covidRBApp.cleanupDrink[key] = "" ;
     }
-  }
+  };
 
-  covidRBApp.displayDrinkRecipe(covidRBApp.cleanupDrink)
+  covidRBApp.displayDrinkRecipe(covidRBApp.cleanupDrink);
 }
 
 covidRBApp.displayDrinkRecipe = (recipe) => {
@@ -200,7 +200,7 @@ covidRBApp.modal = (whichRecipe) => {
   })
 };
 
-// Randomize Button
+// Modal Randomize Button
 
 covidRBApp.randomRecipe = (selectedIngredient) => {
   $(`.modal`).on(`click`, `.randomize`, function() {
@@ -216,10 +216,41 @@ covidRBApp.randomRecipe = (selectedIngredient) => {
     }
   })
 }
-  
+
+// Homepage Randomize Button
+
+covidRBApp.randomFoodBtn = ()=>{
+  $(`.randomMeal`).on(`click`, () => {
+    $.ajax({
+      url: "https://www.themealdb.com/api/json/v1/1/random.php",
+      method:'GET',
+      dataType:'json'
+    }).then((recipe)=>{
+      covidRBApp.cleanObject(recipe);
+      covidRBApp.modal(`.foodResults`);
+      $(`.randomize`).remove();
+    })
+  })
+}
+
+  covidRBApp.randomDrinkBtn = ()=>{
+    $(`.randomDrink`).on(`click`, () => {
+      $.ajax({
+        url: "https://www.thecocktaildb.com/api/json/v1/1/random.php",
+        method:'GET',
+        dataType:'json'
+      }).then((randomDrink)=>{
+        covidRBApp.cleanDrinkObject(randomDrink);
+        covidRBApp.modal(`.drinkResults`);
+        $(`.randomize`).remove();
+      })
+    })
+  }
   
 covidRBApp.init = () => {
   covidRBApp.userSelection();
+  covidRBApp.randomFoodBtn();
+  covidRBApp.randomDrinkBtn();
 }
 
 $(() => {

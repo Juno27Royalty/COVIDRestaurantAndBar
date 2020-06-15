@@ -51,25 +51,19 @@ select:hover, select:focus{
     font-family: $drinkFont;
 }
 
-form button {
+button {
     display: block;
     margin: 3rem auto;
     @include buttonStyle
 }
 
-.meal button {
+.food button {
     background-color: $drinkColor;
-    font-size: 2.5rem;
     font-family: $foodFont;
 }
 
 .drink button {
     background-color: $foodColor;
-    font-size: 2.5rem;
-    font-family: $drinkFont;
-}
-
-.drink button {
     font-family: $drinkFont;
 }
 
