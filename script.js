@@ -216,6 +216,7 @@ covidRBApp.randomRecipe = (selectedIngredient) => {
     }
   })
 }
+
   
   
 covidRBApp.init = () => {
