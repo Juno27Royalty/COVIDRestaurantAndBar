@@ -38,14 +38,11 @@ covidRBApp.userSelection = () => {
       let choice = this[0].value;
       covidRBApp.getDrinkID(choice);
       covidRBApp.modal(`.drinkResults`);
-      covidRBApp.randomRecipe(choice)
+      covidRBApp.randomRecipe(choice);
     }
-    
-  $(`.modal`).on(`click`, `.closeModal`, () => {
-    $(whichRecipe).removeClass(`show`);
-    $('select').val("0");
-  })
-}
+  }
+)};
+
 
 // Call Food
 
@@ -201,8 +198,6 @@ covidRBApp.modal = (whichRecipe) => {
   $(`.modal`).on(`click`, `.closeModal`, () => {
     $(whichRecipe).removeClass(`show`);
   })
-  
-  $('select').val("0");
 };
 
 // Randomize Button
