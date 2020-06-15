@@ -20,20 +20,32 @@
 
 // *Stretch goals
 
-
-
 const covidRBApp = {};
 
-// Modal Functionality
+// Select Ingredients
 
-covidRBApp.modal = (whichRecipe) => {
-  $(whichRecipe).addClass(`show`);
-
+covidRBApp.userSelection = () => {
+  $(`form`).on(`submit`, function(e) {
+    e.preventDefault();
+    
+    if ($(this).hasClass(`meal`)) {
+      let choice = this[0].value;
+      covidRBApp.getID(choice);
+      covidRBApp.modal(`.foodResults`);
+      covidRBApp.randomRecipe(choice);
+    } 
+    else if ($(this).hasClass(`cocktail`)) {
+      let choice = this[0].value;
+      covidRBApp.getDrinkID(choice);
+      covidRBApp.modal(`.drinkResults`);
+      covidRBApp.randomRecipe(choice)
+    }
+    
   $(`.modal`).on(`click`, `.closeModal`, () => {
     $(whichRecipe).removeClass(`show`);
     $('select').val("0");
   })
-};
+}
 
 // Call Food
 
@@ -109,9 +121,8 @@ covidRBApp.displayRecipe = (recipe) => {
         <a class="recipeVideo" href="${recipe.strYoutube}" target="_blank">Click here for the recipe video!</a>
       </div>
     </div>
-    <div class="closeModal">
-      <p>I'm full! Now I'm thirsty.</p>
-    </div>
+    <button class="randomize meal">I'm not feeling this one. Give me another.</button>
+    <button class="closeModal">I'm full! Now I'm thirsty.</button>
   `);
 }
 
@@ -177,25 +188,36 @@ covidRBApp.displayDrinkRecipe = (recipe) => {
       </ul>
     </div>
     <div class="recipe"><h4>Directions:</h4>${recipe.strInstructions}</div>
-    <div class="closeModal">
-      <p>Thirst quenched! Now I'm hungry.</p>
-    </div>
+    <button class="randomize cocktail">I'm not feeling this one. Give me another.</button>
+    <button class="closeModal">Thirst quenched! Now I'm hungry.</button>
   `);
 };
 
-// Select Ingredients
+// Modal Functionality
 
-covidRBApp.userSelection = () => {
-  $(`form`).on(`submit`, function(e) {
-    e.preventDefault();
-    
-    if ($(this).hasClass(`meal`)) {
-      covidRBApp.getID(this[0].value);
-      covidRBApp.modal(`.foodResults`);
-    } 
-    else if ($(this).hasClass(`cocktail`)) {
-      covidRBApp.getDrinkID(this[0].value);
-      covidRBApp.modal(`.drinkResults`);
+covidRBApp.modal = (whichRecipe) => {
+  $(whichRecipe).addClass(`show`);
+
+  $(`.modal`).on(`click`, `.closeModal`, () => {
+    $(whichRecipe).removeClass(`show`);
+  })
+  
+  $('select').val("0");
+};
+
+// Randomize Button
+
+covidRBApp.randomRecipe = (selectedIngredient) => {
+  $(`.modal`).on(`click`, `.randomize`, function() {
+    if ($(this).parent().hasClass(`foodResults`)) {
+      $(`.foodResults`).removeClass(`show`);
+      covidRBApp.getID(selectedIngredient)
+      setTimeout(function(){ $(`.foodResults`).addClass(`show`); }, 300);
+    }
+    else if ($(this).parent().hasClass(`drinkResults`)) {
+      $(`.drinkResults`).removeClass(`show`);
+      covidRBApp.getDrinkID(selectedIngredient)
+      setTimeout(function(){ $(`.drinkResults`).addClass(`show`); }, 300);
     }
   })
 }

@@ -10,24 +10,20 @@
 }
 
 @mixin buttonStyle {
-    margin: 4rem auto;
+    margin: 2rem auto;
     padding: 1.5rem;
+    font-weight: 700;
     border-radius: 5px;
     border-left: solid 2px gainsboro;
     border-top: solid 2px gainsboro;
     border-right: solid 2px gray;
     border-bottom: solid 2px gray;
     transition: all 0.2s;
+    font-size: 2.5rem;
 
     &:hover,
     &:focus {
         cursor: pointer;
-        color:dimgrey;
-    }
-
-
-    &:hover>p,
-    &:focus>p {
         color:dimgrey;
     }
 
