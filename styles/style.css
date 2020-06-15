@@ -381,8 +381,9 @@ select:hover, select:focus {
 form button {
   display: block;
   margin: 3rem auto;
-  margin: 4rem auto;
+  margin: 2rem auto;
   padding: 1.5rem;
+  font-weight: 700;
   border-radius: 5px;
   border-left: solid 2px gainsboro;
   border-top: solid 2px gainsboro;
@@ -390,15 +391,11 @@ form button {
   border-bottom: solid 2px gray;
   -webkit-transition: all 0.2s;
   transition: all 0.2s;
+  font-size: 2.5rem;
 }
 
 form button:hover, form button:focus {
   cursor: pointer;
-  color: dimgrey;
-}
-
-form button:hover > p,
-form button:focus > p {
   color: dimgrey;
 }
 
@@ -440,7 +437,7 @@ footer {
   width: 100%;
   position: absolute;
   z-index: 20;
-  top: -300%;
+  top: -3000px;
   left: 0;
   padding: 3rem;
   min-height: 100vh;
@@ -501,6 +498,7 @@ img {
 
 .recipe {
   width: 70%;
+  margin-bottom: 2rem;
 }
 
 .recipe p {
@@ -514,10 +512,11 @@ img {
   margin-top: 2rem;
 }
 
-.foodResults .closeModal {
+.foodResults button {
   background-color: #b1d2da;
-  margin: 4rem auto;
+  margin: 2rem auto;
   padding: 1.5rem;
+  font-weight: 700;
   border-radius: 5px;
   border-left: solid 2px gainsboro;
   border-top: solid 2px gainsboro;
@@ -525,56 +524,16 @@ img {
   border-bottom: solid 2px gray;
   -webkit-transition: all 0.2s;
   transition: all 0.2s;
-}
-
-.foodResults .closeModal:hover, .foodResults .closeModal:focus {
-  cursor: pointer;
-  color: dimgrey;
-}
-
-.foodResults .closeModal:hover > p,
-.foodResults .closeModal:focus > p {
-  color: dimgrey;
-}
-
-.foodResults .closeModal:active {
-  -webkit-filter: brightness(0.9);
-          filter: brightness(0.9);
-  border-left: solid 2px gray;
-  border-top: solid 2px gray;
-  border-right: solid 2px gainsboro;
-  border-bottom: solid 2px gainsboro;
-}
-
-.foodResults .closeModal p {
+  font-size: 2.5rem;
   font-family: "Acme", sans-serif;
-  font-weight: 700;
 }
 
-.drinkResults .closeModal {
-  background-color: #efbeab;
-  margin: 4rem auto;
-  padding: 1.5rem;
-  border-radius: 5px;
-  border-left: solid 2px gainsboro;
-  border-top: solid 2px gainsboro;
-  border-right: solid 2px gray;
-  border-bottom: solid 2px gray;
-  -webkit-transition: all 0.2s;
-  transition: all 0.2s;
-}
-
-.drinkResults .closeModal:hover, .drinkResults .closeModal:focus {
+.foodResults button:hover, .foodResults button:focus {
   cursor: pointer;
   color: dimgrey;
 }
 
-.drinkResults .closeModal:hover > p,
-.drinkResults .closeModal:focus > p {
-  color: dimgrey;
-}
-
-.drinkResults .closeModal:active {
+.foodResults button:active {
   -webkit-filter: brightness(0.9);
           filter: brightness(0.9);
   border-left: solid 2px gray;
@@ -583,14 +542,34 @@ img {
   border-bottom: solid 2px gainsboro;
 }
 
-.drinkResults .closeModal p {
-  font-family: "Dancing Script", cursive;
+.drinkResults button {
+  background-color: #efbeab;
+  margin: 2rem auto;
+  padding: 1.5rem;
   font-weight: 700;
-}
-
-.closeModal p {
+  border-radius: 5px;
+  border-left: solid 2px gainsboro;
+  border-top: solid 2px gainsboro;
+  border-right: solid 2px gray;
+  border-bottom: solid 2px gray;
   -webkit-transition: all 0.2s;
   transition: all 0.2s;
+  font-size: 2.5rem;
+  font-family: "Dancing Script", cursive;
+}
+
+.drinkResults button:hover, .drinkResults button:focus {
+  cursor: pointer;
+  color: dimgrey;
+}
+
+.drinkResults button:active {
+  -webkit-filter: brightness(0.9);
+          filter: brightness(0.9);
+  border-left: solid 2px gray;
+  border-top: solid 2px gray;
+  border-right: solid 2px gainsboro;
+  border-bottom: solid 2px gainsboro;
 }
 
 a:hover,
