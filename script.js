@@ -32,7 +32,6 @@ covidRBApp.userSelection = () => {
       let choice = this[0].value;
       covidRBApp.getID(choice);
       covidRBApp.modal(`.foodResults`);
-      console.log(choice)
       covidRBApp.randomRecipe(choice);
     } 
     else if ($(this).hasClass(`cocktail`)) {
@@ -204,15 +203,15 @@ covidRBApp.modal = (whichRecipe) => {
 covidRBApp.randomRecipe = (selectedIngredient) => {
   $(`.modal`).on(`click`, `.randomize`, function() {
     if ($(this).parent().hasClass(`foodResults`)) {
+      $(`.foodResults`).removeClass(`show`);
       covidRBApp.getID(selectedIngredient)
-      console.log(`food`)
+      setTimeout(function(){ $(`.foodResults`).addClass(`show`); }, 300);
     }
     else if ($(this).parent().hasClass(`drinkResults`)) {
+      $(`.drinkResults`).removeClass(`show`);
       covidRBApp.getDrinkID(selectedIngredient)
-      console.log(`drink`)
+      setTimeout(function(){ $(`.drinkResults`).addClass(`show`); }, 300);
     }
-
-    console.log($(this).parent())
   })
 }
 
