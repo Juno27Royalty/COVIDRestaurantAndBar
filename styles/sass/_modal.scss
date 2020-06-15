@@ -2,7 +2,7 @@
     width: 100%;
     position: absolute;
     z-index: 20;
-    top: -300%;
+    top: -3000px;
     left: 0;
     padding: 3rem;
     min-height: 100vh;
@@ -43,6 +43,7 @@ img{
 
 .recipe{
     width: 70%;
+    margin-bottom: 2rem;
 
     p {
         line-height: 3rem;
@@ -57,31 +58,19 @@ img{
 }
 
 .foodResults {
-    .closeModal {
+    button {
         background-color: $drinkColor;
         @include buttonStyle;
-
-        p {
-            font-family: $foodFont;
-            font-weight: 700;
-        }
+        font-family: $foodFont;
     }
 }
 
 .drinkResults {
-    .closeModal {
+    button {
         background-color: $foodColor;
         @include buttonStyle;
-
-        p {
-            font-family: $drinkFont;
-            font-weight: 700;
-        }
+        font-family: $drinkFont;
     }
-}
-
-.closeModal p {
-    transition: all 0.2s;
 }
 
 a:hover,
