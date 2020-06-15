@@ -2,8 +2,13 @@
     .selectionArea{
         flex-direction: column;
     }
-    .food, .drink{
+    .food{
         width:100%;
-        padding-top: 180px;
+        padding-top: 170px;
     }
+    .drink{
+        width:100%;
+        padding-top: 50px;
+    }
+    
 }

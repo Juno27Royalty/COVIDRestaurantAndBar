@@ -31,6 +31,7 @@ covidRBApp.modal = (whichRecipe) => {
 
   $(`.modal`).on(`click`, `.closeModal`, () => {
     $(whichRecipe).removeClass(`show`);
+    $('select').val("0");
   })
 };
 
@@ -193,13 +194,13 @@ covidRBApp.userSelection = () => {
       covidRBApp.modal(`.foodResults`);
     } 
     else if ($(this).hasClass(`cocktail`)) {
-      console.log(`clicked`)
       covidRBApp.getDrinkID(this[0].value);
       covidRBApp.modal(`.drinkResults`);
     }
   })
 }
-
+  
+  
 covidRBApp.init = () => {
   covidRBApp.userSelection();
 }
