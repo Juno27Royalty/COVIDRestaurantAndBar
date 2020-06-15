@@ -606,3 +606,19 @@ a:focus {
     padding-top: 10px;
   }
 }
+
+@media screen and (orientation: landscape) {
+  .selectionArea {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+  .food, .drink {
+    padding-top: 70px;
+  }
+  h2 {
+    margin-top: 10px;
+    font-size: 4rem;
+  }
+}
