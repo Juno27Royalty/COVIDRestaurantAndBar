@@ -40,6 +40,10 @@ covidRBApp.userSelection = () => {
       covidRBApp.modal(`.drinkResults`);
       covidRBApp.randomRecipe(choice)
     }
+    
+  $(`.modal`).on(`click`, `.closeModal`, () => {
+    $(whichRecipe).removeClass(`show`);
+    $('select').val("0");
   })
 }
 
@@ -197,6 +201,8 @@ covidRBApp.modal = (whichRecipe) => {
   $(`.modal`).on(`click`, `.closeModal`, () => {
     $(whichRecipe).removeClass(`show`);
   })
+  
+  $('select').val("0");
 };
 
 // Randomize Button
@@ -215,7 +221,8 @@ covidRBApp.randomRecipe = (selectedIngredient) => {
     }
   })
 }
-
+  
+  
 covidRBApp.init = () => {
   covidRBApp.userSelection();
 }
