@@ -27,3 +27,15 @@
         padding-top: 10px;
     }
 }
+@media screen and (orientation: landscape) {
+      .selectionArea{
+          flex-direction: row;
+      }
+      .food,.drink{
+          padding-top:70px;
+      }
+      h2{
+          margin-top: 10px;
+          font-size: 4rem;
+      }
+}
